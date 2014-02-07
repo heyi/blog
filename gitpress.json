@@ -1,7 +1,7 @@
 
 {
     "docs"      : ["README.md", "README.markdown", "README"],
-    "template"    : "slate",
+    "template"    : "default",
     "perpage"   : 10,
     "order"  : "number",
     "types"     : {
