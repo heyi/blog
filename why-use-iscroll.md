@@ -1,6 +1,5 @@
 # why do i use iscroll
 
-
 After days of evaluation, I came to the conclusion that there is no framework or library out there that fits all my needs. So, the only choice left was to create a custom solution for each operating system. This is what I came up with:
 
 iOS < 5: iScroll
