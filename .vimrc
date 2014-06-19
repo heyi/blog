@@ -23,8 +23,8 @@ Bundle 'https://github.com/tpope/vim-fugitive.git'
 Bundle 'https://github.com/pangloss/vim-javascript.git'
 Bundle 'gmarik/sudo-gui.vim'
 Bundle 'https://github.com/kien/ctrlp.vim.git'
-Bundle 'https://github.com/vimwiki/vimwiki.git'
 Bundle 'https://github.com/ervandew/supertab.git'
+Bundle 'http://github.com/sjl/gundo.vim.git'
 
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass he path to set the runtimepath properly.
@@ -74,6 +74,9 @@ set lbr
 set ai "Auto indent
 set si "Smart indet
 set wrap "Wrap lines
+
+set undofile
+"set undodir
 
 set nobackup
 set nowb
@@ -282,3 +285,5 @@ autocmd FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
 autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
 
 let g:used_javascript_libs = 'angularjs,requirejs'
+
+nnoremap <F5> :GundoToggle<CR>
