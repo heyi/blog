@@ -9,7 +9,7 @@
 			"\\.html?$"            : "html",
 			".*"                   : "text"        
 		},
-		"title"  : "何艺的博客",
+		"title"  : "叶子绿",
 		"description" : "分享自己的一些前端经验，做改变世界的产品。 再次出发…",
 		"comment"  : {"type":"disqus", "short_name":"gitpress"},
 		"friends"  : [
