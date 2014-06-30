@@ -10,5 +10,5 @@ google之，发现这些问题很普遍。解决方案也很多，总之是个�
 后来想，当时我为什么要用iscroll呢，仅仅是因为过去使用过，觉得很好
 用，体验也不错。用在这里合适吗？
 
-
+直觉用原生滚动会更好，[ overflow:scrolling 兼容性检测报告](http://www.quirksmode.org/css/css2/mobile.html)
 
