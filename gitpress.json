@@ -1,6 +1,6 @@
 {
 	"docs"      : ["posts","documents"],
-		"template"    : "tactile",
+		"template"    : "default",
 		"perpage"   : 10,
 		"order"  : "number",
 		"types"     : {

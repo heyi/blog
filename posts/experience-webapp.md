@@ -12,3 +12,4 @@ google之，发现这些问题很普遍。解决方案也很多，总之是个�
 
 直觉用原生滚动会更好，[ overflow:scrolling 兼容性检测报告](http://www.quirksmode.org/css/css2/mobile.html)
 
+
