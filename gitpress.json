@@ -1,37 +1,35 @@
 {
-	"docs"      : ["posts","documents"],
-		"template"    : "tactile",
-		"perpage"   : 10,
-		"order"  : "number",
-		"types"     : {
-			"\\.(md||markdown)$"   : "markdown", 
-			"\\.(js||css||json)$"  : "code",
-			"\\.html?$"            : "html",
-			".*"                   : "text"        
-		},
-		"title"  : "叶子绿",
-		"description" : "分享自己的一些前端经验，做改变世界的产品。 再次出发…",
-		"comment"  : {"type":"disqus", "short_name":"gitpress"},
-		"friends"  : [
-		{
-			"name"  : "酷壳",
-			"title"  : "coolshell.cn",
-			"url"  : "http://coolshell.cn"          
-		},
-		{
-			"name"  : "克军",
-			"title"  : "hikejun.com/",
-			"url"  : "http://hikejun.com/"          
-		},
-		{
-			"name"  : "github",
-			"title"  : "github",
-			"url"  : "http://github.com"          
-		},
-		{
-			"name"  : "gitpress",
-			"title"  : "gitpress",
-			"url"  : "http://gitpress.org"
-		}
-	] 
+  "docs": ["posts", "documents"],
+  "template": "tactile",
+  "perpage": 10,
+  "order": "number",
+  "types": {
+    "\\.(md||markdown)$": "markdown",
+    "\\.(js||css||json)$": "code",
+    "\\.html?$": "html",
+    ".*": "text"
+  },
+  "title": "叶子绿",
+  "description": "分享自己的一些前端经验，做改变世界的产品。 再次出发…",
+  "comment": {
+    "type": "disqus",
+    "short_name": "gitpress"
+  },
+  "friends": [{
+    "name": "酷壳",
+    "title": "coolshell.cn",
+    "url": "http://coolshell.cn"
+  }, {
+    "name": "克军",
+    "title": "hikejun.com/",
+    "url": "http://hikejun.com/"
+  }, {
+    "name": "github",
+    "title": "github",
+    "url": "http://github.com"
+  }, {
+    "name": "gitpress",
+    "title": "gitpress",
+    "url": "http://gitpress.org"
+  }]
 }
