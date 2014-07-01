@@ -44,6 +44,55 @@ google之，发现这些问题很普遍。解决方案也很多，总之是个�
 	}
 }
 ```
-项目中的代码片断，这种组织的好处就是方便管理，写起来很爽。
-在设计风格多变的页面中有很大管理维护优势，缺点是提取共用性的css比较困难.
+项目中的部分sass代码片断，这种组织的好处就是方便管理，互不影响。
+在设计风格多变的页面中有很大管理维护优势，缺点是提取共用性的css会比较困难.
+
+##使用渐进式 JPEG 能提升用户体验
+[关于progressive-jpeg](http://www.webmonkey.com/2013/01/the-return-of-the-progressive-jpeg/)
+[简单说明](http://www.biaodianfu.com/progressive-jpeg.html)
+我第一个想法就是，这个渐进式 jpeg确实很不错，有法子在部署的时候自动转换吗？
+我仔细看了下部署脚本，其中有用到[grunt-contrib-imagemin](https://github.com/gruntjs/grunt-contrib-imagemin#progressive-jpg)
+看官方文档是有这个选项的，而且是默认选中的，很贴心了。
+
+##虚拟键盘遮挡输入框问题。
+这个问题也是很普遍的， 具体表现为如果容器的布局是 --absolute-- 或者 --fixed--,
+点击输入框时，弹出的虚拟键盘会遮挡住输入框。我这里的表现是虚拟键盘会顶高页面,但页面会反弹回来(测试手机是红米)。
+
+网上的解决方案不外乎二种,一种是使用iscroll ,在窗口resize事件中，重置容器的高度，
+刷新iscroll,同时滚动到最底层。
+另一种就是不使用iscroll ,使用定时器监控dom变化，改变容器的布局。
+这二种方案的缺点是很明显的，带来的弊端且直无法忍受。
+
+想了想，最终的法子如下：
+编写了个简单的指令
+```javascripts
+app.directive('scrollHere', function(fmyApi) {
+  return {
+    restrict: 'A',
+    link: function($scope, element, attrs) {
+			element.on('click', function(e) {
+				setTimeout(function() {
+					element[0].scrollIntoView(true);
+				},500);
+			});
+			$scope.$on('$destroy', function() {
+				element.off("click");
+			});
+		}
+	};
+});
+```
+**应用场景：**
+```html
+<div class="input-container sbtn" scroll-here>
+			<input type="text" name="mobile" class='form-control' ng-model='user.mobile' required placeholder='输入手机号' ng-pattern='/^1\d{10}$/'>
+			<button ng-click='getMobileCode()' ng-disabled="form4.mobile.$invalid || sending">
+				{{sending ? '正发送中..' : '发送验证码'}}
+			</button>
+			<span class="tip" ng-show='sending && countDown != 0'>{{countDown}}秒后可以重新获取验证码</span>
+			<span class="error" ng-show='form4.mobile.$error.pattern'>不是手机号码!</span>
+		</div>
+```
+
+可以看出，不是很严谨，因为无法捕获虚拟键盘弹出事件。
 
